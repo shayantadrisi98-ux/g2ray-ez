@@ -27,10 +27,10 @@
       "settings": {
         "clients": [
           {
-            "id": "afa4a897-1de1-492c-8c63-e97ecf0378d8",
+            "id": "063b466c-7b87-4a36-81d9-aa7af198566a",
             "flow": "",
             "level": 0,
-            "email": "user@meta"
+            "email": "user@silver-link-94fe39"
           }
         ],
         "decryption": "none"
@@ -74,6 +74,32 @@
       }
     }
   ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      }
+    ]
+  },
   "policy": {
     "levels": {
       "0": {
